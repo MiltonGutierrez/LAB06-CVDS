@@ -5,36 +5,46 @@
 # Parte I - Despliegue app React (frontend) en Azure
 
 1) Busca Azure for Students en tu buscador de preferencias e ingresa con el correo institucional.
-2) Crea un budget de 1 dólar para la cuenta
-3) El profesor guía el resto de pasos
-
+![image][1]
+Como se muestra en la imagen se crea la cuenta con la subscripción de estudiantes.
+3) Crea un budget de 1 dólar para la cuenta
+![image][2]
+Se muestra la creación del budget para la subscripción de un 1 dolar.
 # Parte II - Despliegue app web spring MVC (o spring-boot backend)
 1) Inicie [Azure Cloud Shell](https://docs.microsoft.com/en-in/azure/cloud-shell/overview) desde el portal. Para implementar en un grupo de recursos, ingrese el siguiente comando
 ```shell
 az group create --name MyResourceGroup --location westus
 ```
+A continuación se muestra el paso a a paso para acceder al Azure Cloud shell
+![image][3]
+![image][4]
+![image][5]
 2) Para crear un plan de servicio de aplicaciones (App service plan)
 ```shell
 az appservice plan create --resource-group MyResourceGroup --name MyPlan --sku F1
 ```
+![image][6]
 3) Finalmente, cree el servidor MySQL con un nombre de servidor único.
 ```shell
 az account list-locations --query "[].{DisplayName:displayName, Name:name}" -o table # choose region
 az configure --defaults location=eastus # set region
 az mysql flexible-server create --resource-group MyResourceGroup --name pongaunnombreunico --admin-user mysqldbuser --admin-password P2ssw0rd@123 --sku-name Standard_B1ms
 ```
+![image][7]
+![image][8]
+![image][9]
+![image][10]
 > Importante: Introduzca un nombre de servidor SQL único. Dado que el nombre de Azure SQL Server no admite las convenciones de nomenclatura de mayúsculas y minúsculas UPPER / Camel , utilice minúsculas para el valor del campo Nombre del servidor de base de datos. 
 4) Navegue hasta el grupo de recursos que ha creado. Debería ver un servidor **Azure Database for MySQL server** aprovisionado. Seleccione el servidor de base de datos.
-
-![image](https://github.com/PDSW-ECI/labs/assets/4140058/6eefacb6-31e5-47e3-b28d-4d1301c8d1e9)
-
+Se encuentra el servidor en la sección dada.
+![image][11]
 5) Seleccione **Properties**. Guarde el **Server name** y el **Server admin login name** en un bloc de notas.
-
-![image](https://github.com/PDSW-ECI/labs/assets/4140058/0a372f89-26da-4a44-ab5b-26e1238c3be8)
-
-> En este ejemplo, el nombre del servidor es myshuttle-1-mysqldbserver.mysql.database.azure.com y el nombre de usuario administrador es mysqldbuser@myshuttle-1-mysqldbserver.
-6) Seleccione **Connection security**. Habilite la opción **Allow access to Azure services** y guarde los cambios. Esto proporciona acceso a los servicios de Azure para todas las bases de datos de su servidor MySQL.
-
+Esto se encontró en el apartado de **Overview** de la base de datos.
+![image][13]
+>  En nuestro caso el server name es **miltongutierrezlopezsqlserver.mysql.database.azure.com** y el server admin login name es **mysqldbuser**
+7) Seleccione **Connection security**. Habilite la opción **Allow access to Azure services** y guarde los cambios. Esto proporciona acceso a los servicios de Azure para todas las bases de datos de su servidor MySQL.
+Esto se encontró en el apartado de **Redes** o **Networking**.
+![image][12]
 ## Ejercicio 2: actualización de la configuración de la aplicación web
 A continuación, navegue hasta la aplicación web que ha creado. Mientras implementa una aplicación Java, debe cambiar el contenedor web de la aplicación web a Apache Tomcat.
 1) Seleccione **Configuration**. Establezca **Stack settings** como se muestra en la imagen a continuación y haga clic en Guardar.
@@ -104,3 +114,22 @@ Configuración necesaria para acceder a FTP:
 
 ## Entrega
 - El enlace de la aplicación React y Spring MVC desplegada en Azure
+
+
+[1]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azuremilton.png
+[2]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azuremiltonbudget.png
+[3]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell.png
+[4]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell1.png
+[5]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell2.png
+[6]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell3.png
+[7]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell4.png
+[8]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell5.png
+[9]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell6.png
+[10]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azureshell7.png
+[11]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/sqlserver.png
+[12]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/sqlserver2.png
+[13]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/sqlserver1.png
+[14]: https://github.com/MiltonGutierrez/LAB04-CVDS/blob/main/resources/PowerI.PNG
+[15]: https://github.com/MiltonGutierrez/LAB04-CVDS/blob/main/resources/OriginalI.PNG
+[16]: https://github.com/MiltonGutierrez/LAB04-CVDS/blob/main/resources/BonusI.PNG
+
