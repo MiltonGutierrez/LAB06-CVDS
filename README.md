@@ -48,8 +48,7 @@ Esto se encontró en el apartado de **Redes** o **Networking**.
 ## Ejercicio 2: actualización de la configuración de la aplicación web
 A continuación, navegue hasta la aplicación web que ha creado. Mientras implementa una aplicación Java, debe cambiar el contenedor web de la aplicación web a Apache Tomcat.
 1) Seleccione **Configuration**. Establezca **Stack settings** como se muestra en la imagen a continuación y haga clic en Guardar.
-
-<img width="735" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/803a49a2-91fa-4122-8e43-6759717ed90b">
+![image][15]
 
 2) Seleccione Overview y click en Browse.
 
@@ -63,19 +62,17 @@ A continuación, debe actualizar las cadenas de conexión para que la aplicació
 
 4) Desde Azure Portal, seleccione la aplicación web que aprovisionó. Ir a Configuración | Configuración de la aplicación | Cadenas de conexión y haga clic en + Nueva cadena de conexión.
 
-![image](https://github.com/PDSW-ECI/labs/assets/4140058/cccc9ce8-c19a-40c1-80b7-d82d278cc8db)
+![image][16]
+
 
 5) En la ventana Agregar/Editar cadena de conexión, agregue una nueva cadena de conexión MySQL con MyDatabase como nombre, pegue la siguiente cadena para el valor y reemplace MySQL Server Name, su nombre de usuario y su contraseña con los valores apropiados. Haga clic en Actualizar.
 ```java
 jdbc:mysql://{MySQL Server Name}:3306/alm?useSSL=true&requireSSL=false&autoReconnect=true&user={your user name}&password={your password}
 ```
-
-![image](https://github.com/PDSW-ECI/labs/assets/4140058/b0d5f0cf-949f-443e-8053-6e7ed2de7aed)
-
-- Nombre del servidor MySQL: Valor que copió previamente de las Propiedades del servidor MySQL.
-- su nombre de usuario: Valor que copió previamente de las Propiedades del servidor MySQL.
-- su contraseña: valor que proporcionó durante la creación del servidor de base de datos MySQL.
-
+En nuestro caso estas opciones se encontran en el apartado Configuración de variables de entorno > Cadenas de conexión
+![image][17]
+El resultado de la cadena es el siguiente:
+> **jdbc:mysql://{miltongutierrezlopezsqlserver.mysql.database.azure.com}:3306/alm?useSSL=true&requireSSL=false&autoReconnect=true&user={mysqldbuser}&password={P2ssw0rd@123}**
 7) Haga clic en Guardar para guardar la cadena de conexión.
 > Nota: Las cadenas de conexión configuradas aquí estarán disponibles como variables de entorno, con el prefijo del tipo de conexión para aplicaciones Java (también para aplicaciones PHP, Python y Node). En el archivo src/main/resources/application.properties, recuperamos la cadena de conexión reemplazando el siguiente código:
 ```java
@@ -129,7 +126,8 @@ Configuración necesaria para acceder a FTP:
 [11]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/sqlserver.png
 [12]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/sqlserver2.png
 [13]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/sqlserver1.png
-[14]: https://github.com/MiltonGutierrez/LAB04-CVDS/blob/main/resources/PowerI.PNG
-[15]: https://github.com/MiltonGutierrez/LAB04-CVDS/blob/main/resources/OriginalI.PNG
-[16]: https://github.com/MiltonGutierrez/LAB04-CVDS/blob/main/resources/BonusI.PNG
+[14]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webapp1.png
+[15]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webapp2.png
+[16]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webapp3.png
+[17]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webapp4.png
 
