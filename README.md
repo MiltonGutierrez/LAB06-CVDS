@@ -100,26 +100,20 @@ En este caso las modificaciones se realizan en la linea de comandos (CLI) en la 
 ### Obtenga credenciales de ámbito de aplicación
 Esto simplemente se puede obtener en el apartado de vista general de la web app, en la zona de FTP
 ![image][19]
-Configuración de la base de datos:
-<img width="1165" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/73ea2177-da10-4000-a1e9-a8c769891e64">
-
-Configuración del servicio FTP:
-<img width="1495" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/05f5d912-717b-497a-b58c-468368107219">
-
-Ejemplo conexión Filezilla:
-<img width="1059" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/c12f8be9-38dc-4906-a53b-d69d8cfe4016">
-<img width="1201" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/855db5f1-e2b2-4f9d-b3b8-77e1d90afa4a">
-
-Ejemplo conexión Cyberduck:
-<img width="837" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/0d419624-d114-4e1f-8a4f-9b92c0ce3d9f">
-<img width="602" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/2da21022-57b9-4ba5-8eda-be602fc5b2d2">
-
-Configuración necesaria para acceder a FTP:
-<img width="840" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/5dbb25b3-8135-4715-b5f3-e6b0d939c08e">
-
+Ahora para poder crear el archivo jar de la aplicacion tenemos que realizar unas pequeñas modificaciones en el proyecto. En el apartado de application.properties
+![image][22]
+Por consiguiente se importa el siguente paquete en LabApp7
+![image][23]
+Y finalizando compilamos el proyecto.
+![image][24]
+![image][25]
+Adicionalmente el resultado se le cambia el nombre a app.jar y se copia al directorio del servidor. En el apartado de la aplicacion en la parte de Startup command se coloca el siguiente comando java -jar /home/site/wwwroot/app.jar --server.port=80
+![image][27]
+El resultado final lastimosamente fue un error de aplicacion ya que el container de la app no se pudo inicializar y como tal no respondia al ping en el puerto 80 según la revisión de logs 
+![image][26]
 ## Miembros
 - Milton Andres Gutierrez Lopez
-- Jhon Sebastian Sosa Muñozgit
+- Jhon Sebastian Sosa Muñoz
 
 
 [1]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azuremilton.png
@@ -143,4 +137,9 @@ Configuración necesaria para acceder a FTP:
 [19]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/ftp2.png
 [20]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/ftpCLI1.png
 [21]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/ftpCLI2.png
-
+[22]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/appmodificacion1.png
+[23]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/appmodificacion2.png
+[24]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/appmodificacion3.png
+[25]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/appmodificacion4.png
+[26]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webappfinal.png
+[27]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/filezilla.png
