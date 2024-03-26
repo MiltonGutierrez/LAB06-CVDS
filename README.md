@@ -90,8 +90,16 @@ spring.jpa.show-sql=true
 Ahora ha instalado y configurado todos los recursos necesarios para implementar y ejecutar la aplicación.
 
 ## Ejercicio 3: implementar los cambios en la aplicación web
-1) Apaga los servicios, conectate con un cliente FTP y sube el jar de la aplicación Java disponible en este enlace https://github.com/PDSW-ECI/spring-mvc-with-bootstrap, sigue este tutorial https://learn.microsoft.com/en-us/azure/app-service/deploy-ftp?tabs=portal
-
+### Configurar las credenciales de implementación para Azure App Service
+Seguimos con las indicaciones para poder configurar y obtener las credenciales de implementación para nuestra app. Para poder realizar esto primer tenemos que activar los servicios de FTP de la webapp.
+![image][18] 
+### Configurar credenciales de ámbito de usuario
+En este caso las modificaciones se realizan en la linea de comandos (CLI) en la nube de Azure.
+![image][20]
+![image][21]
+### Obtenga credenciales de ámbito de aplicación
+Esto simplemente se puede obtener en el apartado de vista general de la web app, en la zona de FTP
+![image][19]
 Configuración de la base de datos:
 <img width="1165" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/73ea2177-da10-4000-a1e9-a8c769891e64">
 
@@ -109,8 +117,9 @@ Ejemplo conexión Cyberduck:
 Configuración necesaria para acceder a FTP:
 <img width="840" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/5dbb25b3-8135-4715-b5f3-e6b0d939c08e">
 
-## Entrega
-- El enlace de la aplicación React y Spring MVC desplegada en Azure
+## Miembros
+- Milton Andres Gutierrez Lopez
+- Jhon Sebastian Sosa Muñozgit
 
 
 [1]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/azuremilton.png
@@ -130,4 +139,8 @@ Configuración necesaria para acceder a FTP:
 [15]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webapp2.png
 [16]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webapp3.png
 [17]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/webapp4.png
+[18]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/ftp1.png
+[19]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/ftp2.png
+[20]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/ftpCLI1.png
+[21]: https://github.com/MiltonGutierrez/LAB06-CVDS/blob/master/images/ftpCLI2.png
 
